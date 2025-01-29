@@ -21,4 +21,4 @@ jobs:
       #     EOF
       - name: Connect to EC2
         run: |
-          "echo 'Connected to EC2!' ${{ secrets.EC2_HOST }} "
+          echo "EC2_HOST is set."
