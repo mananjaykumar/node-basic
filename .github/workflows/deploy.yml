@@ -21,8 +21,11 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
-            cd ~/app
+            cd ~/app/node-basic
             git pull origin main
             docker-compose down
             docker-compose up --build -d
           EOF
+      - name: Clean up Docker
+        run: |
+          ssh ubuntu@${{ secrets.EC2_HOST }} "docker system prune -af"
