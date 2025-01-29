@@ -28,4 +28,4 @@ jobs:
           EOF
       - name: Clean up Docker
         run: |
-          ssh ubuntu@${{ secrets.EC2_HOST }} "docker system prune -af"
+          ssh ubuntu@${{ secrets.EC2_HOST }} "sudo docker system prune -af"
